@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>...</title>
+</head>
+<body>
+
+    <div class="back-login">
+        <h3><a href="/user/login">Giriş Yap</a></h3>
+    </div>
+    <div class="login">
+      <h1 class="message">
+        <% if (locals.flashRegistered) { %>
+          <%= flashRegistered %>
+        <% } %>
+      </h1>
+        <form action="/user/registered" method="post">
+          <input type="text" name="name" id="name" placeholder="İsim" required="required" />
+          <input type="text" name="surname" id="surname" placeholder="Soyisim" required="required" />
+          <input type="text" name="workerid" id="workerid" placeholder="Sicil No" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Kayıt Ol !</button>
+        </form>
+      </div>
+
+</body>
+</html>

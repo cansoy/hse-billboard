@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>...</title>
+</head>
+<body>
+    <div class="register">
+        <h3><a href="/user/register">Kayıt Ol</a></h3>
+    </div>
+    <div class="login">
+      <h1>
+          <% if (locals.flashRegistered) { %>
+              <%= flashRegistered %>
+          <% } %>
+        </h1>
+        <h2>
+          <% if (locals.flashNewUserRegisterError) { %>
+              <%= flashNewUserRegisterError %>
+          <% } %>
+        </h2>
+        <h2>
+          <% if (locals.flashConnectionerror) { %>
+              <%= flashConnectionerror %>
+          <% } %>
+        </h2>
+        <h2>
+          <% if (locals.flashWronguserpassword) { %>
+              <%= flashWronguserpassword %>
+          <% } %>
+        </h2>
+        <h2>
+          <% if (locals.fashExistUser) { %>
+              <%= fashExistUser %>
+          <% } %>
+        </h2>
+        <h2>
+          <% if (locals.flashLoginError) { %>
+              <%= flashLoginError %>
+          <% } %>
+        </h2>
+        <form action="/user/logged" method="post">
+          <input type="text" name="username" id="username" placeholder="Kullanıcı Adı" required="required" />
+          <input type="password" name="password" id="password" placeholder="Şifre" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Giriş Yap !</button>
+        </form>
+      </div>
+</body>
+</html>
