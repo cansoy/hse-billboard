@@ -30,7 +30,7 @@ server.use(session({
     cookie:{
         maxAge:60*60*1000,
         httpOnly:true,
-        secure:true,
+        secure:false,
         sameSite:'lax'
     },
 }))
@@ -38,7 +38,7 @@ server.use(session({
 server.use(flash())
 server.use(cookieParser())
 server.get('/',(req,res)=>{
-    console.log('new version')
+    console.log('new version secure false')
     res.redirect('/user/login')
 })
 server.use('/user',userRouter)
