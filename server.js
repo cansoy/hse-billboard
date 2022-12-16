@@ -1,6 +1,6 @@
 const path =    require('path')
 const fs=       require('fs')
-require('dotenv').config({path:path.join(__dirname,'./bin/.env')})
+// require('dotenv').config({path:path.join(__dirname,'./bin/.env')})
 const express=  require('express')
 const cors=     require('cors')
 const helmet =  require('helmet')
@@ -37,6 +37,10 @@ server.use(session({
 
 server.use(flash())
 server.use(cookieParser())
+server.get('/',(req,res)=>{
+    console.log('new version')
+    res.redirect('/user/login')
+})
 server.use('/user',userRouter)
 server.use('/home',homeRouter)
 
