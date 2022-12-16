@@ -40,11 +40,11 @@ server.use(cookieParser())
 server.use('/user',userRouter)
 server.use('/home',homeRouter)
 
-server.use('*',(req,res)=>{
-    req.session.destroy()
-    res.clearCookie('cansoy_token')
-    res.redirect('/user/login')
-})
+// server.use('*',(req,res)=>{
+//     req.session.destroy()
+//     res.clearCookie('cansoy_token')
+//     res.redirect('/user/login')
+// })
 
 server.listen(PORT,()=>{
     console.log('//////////////////////////////////////////////////////////////////////')
